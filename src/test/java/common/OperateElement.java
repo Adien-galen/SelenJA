@@ -102,6 +102,18 @@ public class OperateElement {
 	}
 
 	/**
+	 * 通过html某个标签中间的text,等待元素的出现,返回此元素
+	 * @param text
+	 * @return
+	 */
+	public static WebElement waitByText(String text){
+		String xpath = "//*[text()='"+text+"']";
+		WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
+		WebElement targetElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+		return targetElement;
+	}
+
+	/**
 	 * 通过元素的className，等待元素列表的出现,返回此元素列表
 	 * @param className 元素的className
 	 * @return 返回等待的元素
@@ -209,6 +221,37 @@ public class OperateElement {
 	}
 
 	/**
+	 * 通过html某个标签中间的text找到元素,并点击它
+	 * @param text
+	 */
+	public static void clickByText(String text){
+		String xpath = "//*[text()='"+text+"']";
+		WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
+		WebElement targetElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+		targetElement.click();
+	}
+
+	/**
+	 * 用javaScript执行点击事件
+	 * @param
+	 * @author guilin_cui
+	 */
+	public static void clickByJS(WebElement ele){
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();", ele);
+	}
+
+	/**
+	 * 用javaScript执行点击事件
+	 * @param by 传入定位
+	 */
+	public static void clickByJSBy(By by){
+		WebElement ele = driver.findElement(by);
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();", ele);
+	}
+
+	/**
 	 * 通过元素的Xpath，等待文本框的出现,并输入
 	 */
 	public static void sendKeysByXpath(String xpath,String keys) {
@@ -263,6 +306,17 @@ public class OperateElement {
 		targetElement.sendKeys(keys);
 	}
 
+	/**
+	 * 用javaScript输入
+	 * @param
+	 * @author guilin_cui
+	 */
+	public static void sendKesyByJS(WebElement ele,String keys){
+		String str = "arguments[0].value='"+keys+"';";
+		ele.clear();
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript(str, ele);
+	}
 
 	/**
 	 * 等待元素可见
@@ -304,6 +358,71 @@ public class OperateElement {
 	}
 
 	/**
+	 * 鼠标悬停
+	 * @param ele 元素
+	 * @param ms 悬停时间(毫秒)
+	 */
+	public static void mouthHover(WebElement ele,int ms){
+		Actions actions = new Actions(driver);
+		actions.moveToElement(ele).perform();
+		threadSleep(ms);
+	}
+
+	/**
+	 *鼠标点击并悬停
+	 */
+	public static void clickAndHold(WebElement ele){
+		Actions actions = new Actions(driver);
+		actions.clickAndHold(ele).perform();
+	}
+
+	/**
+	 *双击
+	 */
+	public static void doubleClick(WebElement ele){
+		Actions builder = new Actions(driver);
+		Actions hoverOverRgeistrar = builder.doubleClick(ele);
+		hoverOverRgeistrar.perform();
+	}
+
+	/**
+	 * 判断元素是否存在
+	 * @param ele 等待的元素
+	 * @return boolean 是否存在
+	 */
+	public static boolean isElementExsit(WebElement ele) {
+		boolean flag ;
+		try {
+			WebDriverWait wait = new WebDriverWait(driver,timeOutInSeconds);
+			WebElement element = wait.until(ExpectedConditions.visibilityOf(ele));
+			flag = element.isDisplayed();
+		} catch (Exception e) {
+			flag = false;
+			System.out.println("Element:" + ele.toString()
+					+ " is not exsit!");
+		}
+		return flag;
+	}
+
+	/**
+	 * 判断元素是否存在
+	 * @param locator 如：By.id("")
+	 * @return boolean 是否存在
+	 */
+	public static boolean isElementExsitBy(By locator) {
+		boolean flag = false;
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			flag = true;
+		} catch (NoSuchElementException e) {
+			System.out.println("Element:" + locator.toString()
+					+ " is not exsit!");
+		}
+		return flag;
+	}
+
+	/**
 	 * 通过点击一个元素来切换窗口
 	 * @param element 被点击的元素
 	 */
@@ -321,7 +440,7 @@ public class OperateElement {
 	}
 
 	/**
-	 * 通过窗口的索引来切换窗口
+	 * 通过窗口的索引来切换窗口,index从0开始
 	 * @param index
 	 */
 	public static void switchToWindowByIndex(int index){
@@ -426,38 +545,6 @@ public class OperateElement {
 		return targetAlert;
 	}
 
-	/**
-	 * 用javaScript执行点击事件
-	 * @param
-	 * @author guilin_cui
-	 */
-	public static void clickByJS(WebElement ele){
-		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("arguments[0].click();", ele);
-	}
-
-	/**
-	 * 用javaScript执行点击事件
-	 * @param by 传入定位
-	 */
-	public static void clickByJSBy(By by){
-		WebElement ele = driver.findElement(by);
-		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("arguments[0].click();", ele);
-	}
-
-	/**
-	 * 用javaScript输入
-	 * @param
-	 * @author guilin_cui
-	 */
-	public static void sendKesyByJS(WebElement ele,String keys){
-		String str = "arguments[0].value='"+keys+"';";
-		ele.clear();
-		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript(str, ele);
-	}
-
 
 	/**
 	 * 打开新的窗口，并切换到该窗口
@@ -469,35 +556,6 @@ public class OperateElement {
 		((JavascriptExecutor)driver).executeScript(js);
 		switchToWindowHandle(windwoName);
 	}
-
-	/**
-	 * 鼠标悬停
-	 * @param ele 元素
-	 * @param ms 悬停时间(毫秒)
-	 */
-	public static void mouthHover(WebElement ele,int ms){
-		Actions actions = new Actions(driver);
-		actions.moveToElement(ele).perform();
-		threadSleep(ms);
-	}
-
-	/**
-	 *鼠标点击并悬停
-	 */
-	public static void clickAndHold(WebElement ele){
-		Actions actions = new Actions(driver);
-		actions.clickAndHold(ele).perform();
-	}
-
-	/**
-	 *双击
-	 */
-	public static void doubleClick(WebElement ele){
-		Actions builder = new Actions(driver);
-		Actions hoverOverRgeistrar = builder.doubleClick(ele);
-		hoverOverRgeistrar.perform();
-	}
-
 
 	/**
 	 * 线程等待
@@ -512,42 +570,6 @@ public class OperateElement {
 		}
 	}
 
-	/**
-	 * 判断元素是否存在
-	 * @param ele 等待的元素
-	 * @return boolean 是否存在
-	 */
-	public static boolean isElementExsit(WebElement ele) {
-		boolean flag ;
-		try {
-			WebDriverWait wait = new WebDriverWait(driver,timeOutInSeconds);
-			WebElement element = wait.until(ExpectedConditions.visibilityOf(ele));
-			flag = element.isDisplayed();
-		} catch (Exception e) {
-			flag = false;
-			System.out.println("Element:" + ele.toString()
-					+ " is not exsit!");
-		}
-		return flag;
-	}
-
-	/**
-	 * 判断元素是否存在
-	 * @param locator 如：By.id("")
-	 * @return boolean 是否存在
-	 */
-	public static boolean isElementExsitBy(By locator) {
-		boolean flag = false;
-		try {
-			WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
-			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-			flag = true;
-		} catch (NoSuchElementException e) {
-			System.out.println("Element:" + locator.toString()
-					+ " is not exsit!");
-		}
-		return flag;
-	}
 
 	/**
 	 * 打开url，一直等到页面的readyState为“complete",注意readyState=complete时并不意味着url全部加载完毕，只是这时我们的页面元素可以操作了
