@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="搜索" preserve-order="true" >  <!-- 如果加 parallel="tests" 则每个test启动一个浏览器，并发执行用例 -->
+    <listeners>
+        <listener class-name="test.java.utils.RetryListener" />
+    </listeners>
+    <usedefaultlisteners name="false" />
+
+    <test name="百度搜索">
+        <classes>
+            <class name="test.java.cases.BaiduTest" />
+            <methods>
+                <include name="test百度搜索" />
+                <include name="test百度登录" />
+            </methods>
+        </classes>
+    </test>
+
+    <test name="搜狗搜索">
+        <classes>
+            <class name="test.java.cases.SogouTest" />
+            <methods>
+                <include name="test搜狗搜索" />
+            </methods>
+        </classes>
+    </test>
+
+</suite>
