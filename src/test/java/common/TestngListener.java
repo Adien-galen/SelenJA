@@ -15,13 +15,12 @@ import java.util.*;
 
 public class TestngListener extends TestListenerAdapter {
 	
-//	public static WebDriver driver;
-	
 	public void onTestFailure(ITestResult tr) {
 		
 		super.onTestFailure(tr);
 		try {
 			BaseTest bt = (BaseTest) tr.getInstance();
+			//获取webdriver实例
 			WebDriver driver = bt.getDriver();
 			takeScreenShot(driver);
 			logCaseStep(tr);

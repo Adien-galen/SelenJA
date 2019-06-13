@@ -1,5 +1,6 @@
 package test.java.cases;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -48,7 +49,8 @@ public class BaiduTest extends BaseTest {
         OperateElement.clickByLinkText("登录");
         BaiduPO.login(username,password);
         //验证用户名是否存在
-        boolean exsit = OperateElement.isElementExsit(OperateElement.waitByClassName("user-name"));
+//        boolean exsit = OperateElement.isElementExsit(OperateElement.waitByClassName("user-name"));
+        boolean exsit = OperateElement.isElementExsitBy(By.className("user-name"));
         Assert.assertTrue(exsit);
     }
 }

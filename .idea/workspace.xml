@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="25cfebbe-c485-4586-80cd-c60e4744db32" name="Default" comment="" />
+    <list default="true" id="25cfebbe-c485-4586-80cd-c60e4744db32" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/test/java/cases/BaiduTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cases/BaiduTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/common/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/common/BaseTest.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,30 +15,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="124" column="62" selection-start-line="124" selection-start-column="62" selection-end-line="124" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/common/BaseTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="env.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/env.properties">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="testng.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BaiduTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/cases/BaiduTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/common/BaseTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testng.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testng.xml">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -49,6 +52,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/cases/BaiduTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/common/BaseTest.java" />
       </list>
     </option>
@@ -91,6 +95,24 @@
             <path>
               <item name="SelenJA" type="b2602c69:ProjectViewProjectNode" />
               <item name="SelenJA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SelenJA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SelenJA" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SelenJA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SelenJA" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SelenJA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SelenJA" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cases" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -169,8 +191,30 @@
       <listeners />
     </configuration>
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\lingshu\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="E:\IDEAworkspace\SelenJA" />
+          <option name="myCopyRoot" value="E:\IDEAworkspace\SelenJA" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="E:\IDEAworkspace\SelenJA\.idea" />
+          <option name="myCopyRoot" value="E:\IDEAworkspace\SelenJA\.idea" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="E:\IDEAworkspace\SelenJA" />
+          <option name="myCopyRoot" value="E:\IDEAworkspace\SelenJA" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -179,7 +223,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1560405367668</updated>
-      <workItem from="1560405370844" duration="915000" />
+      <workItem from="1560405370844" duration="1630000" />
     </task>
     <task id="LOCAL-00001" summary="first commit&#10;first commit">
       <created>1560405701037</created>
@@ -188,18 +232,27 @@
       <option name="project" value="LOCAL" />
       <updated>1560405701037</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="first commit&#10;first commit">
+      <created>1560406678533</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1560406678533</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="915000" />
+    <option name="totallyTimeSpent" value="1630000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="RestServices" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
       <window_info anchor="right" id="Capture Analysis" />
@@ -268,6 +321,9 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/utils/SuperRandom.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/testng.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="479">
@@ -275,18 +331,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/common/BaseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/env.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/testng.xml">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/cases/BaiduTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/common/BaseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

@@ -4,7 +4,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
-import org.testng.annotations.Parameters;
 import test.java.utils.ReadProperties;
 
 import java.util.Properties;
@@ -16,6 +15,7 @@ import java.util.Properties;
  * Description:
  */
 
+@Listeners({TestngListener.class})
 public class BaseTest {
     public ChromeDriver driver;
     public Properties envProperties;
