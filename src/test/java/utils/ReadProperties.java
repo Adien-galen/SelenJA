@@ -19,8 +19,9 @@ public class ReadProperties {
     public static Properties readProperties(String fileName){
         Properties properties = new Properties();
         try{
-            BufferedInputStream in = new BufferedInputStream(new FileInputStream(fileName));
-            properties.load(in);
+            InputStream in = new BufferedInputStream(new FileInputStream(fileName));
+            BufferedReader bf = new BufferedReader(new InputStreamReader(in, "GBK")); //解决中文乱码
+            properties.load(bf);
         } catch (IOException e) {
             e.printStackTrace();
         }
